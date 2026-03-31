@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lo stacking context e Z-INDEX</title>
+    <style>
+      #container {
+        width: 500px;
+        height: 500px;
+        border: 1px solid black;
+        background-color: rgb(198, 185, 185);
+        position: relative;
+      }
+
+      .box {
+        width: 250px;
+        height: 250px;
+        border: 1px solid black;
+        position: absolute;
+      }
+
+      .box:nth-of-type(1) {
+        background-color: red;
+        /* invertiamo */
+        z-index: 3;
+      }
+      .box:nth-of-type(2) {
+        background-color: green;
+        left: 50px;
+        top: 50px;
+        /* invertiamo */
+        z-index: 2;
+      }
+      .box:nth-of-type(3) {
+        background-color: blue;
+        left: 100px;
+        top: 100px;
+        /* invertiamo */
+        z-index: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h2>Z-INDEX</h2>
+    </header>
+    <main>
+      <p>
+        Normalmente, il browser disegna gli elementi HTML in ordine
+        "cronologico" (dall'alto verso il basso). Inoltre, utilizzando la
+        proprietà "position", il browser applica dei criteri di disegno diversi
+        da quelli canonici (viene creato un nuovo "stacking context"), perchè
+        presuppone che un elemento ad es. posizionato in "absolute" debba
+        risultare in "sovraimpressione" rispetto ad altri elementi.
+      </p>
+      <p>
+        Questo "ordine di disegno" però può venire manipolato tramite la
+        proprietà "z-index", il cui valore di default per ogni elemento è "auto"
+        ma che può venire riassegnata ad un valore numerico con un range enorme.
+        I valori di per sé non hanno significato, dipende dal resto dei valori
+        assegnati agli altri elementi.
+      </p>
+      <p>z-index NON funziona con elementi dotati di "position: static".</p>
+      <section id="container">
+        <article class="box"></article>
+        <article class="box"></article>
+        <article class="box"></article>
+      </section>
+    </main>
+    <footer>
+      <p>EPICODE - 2026</p>
+    </footer>
+  </body>
+</html>
