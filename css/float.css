@@ -1,0 +1,57 @@
+body {
+  font-family: Arial;
+  margin: 0;
+}
+
+header {
+  text-align: center;
+}
+
+header ul {
+  list-style-type: none;
+  margin: 0;
+  margin-bottom: 2em;
+}
+
+header a {
+  color: black;
+  text-decoration: none;
+}
+
+main section:nth-of-type(1) {
+  /* la prima section */
+  text-align: center;
+}
+
+main section:nth-of-type(2) {
+  /* la seconda section */
+  padding: 0 1em;
+  text-align: justify;
+}
+
+footer {
+  text-align: center;
+  background-color: rgb(10, 10, 200);
+  color: white;
+  padding: 1em 0;
+}
+
+footer p {
+  margin: 0;
+}
+
+@media screen and (min-width: 768px) {
+  main section:nth-of-type(1) {
+    /* la prima section */
+    float: left;
+    /* la proprietà FLOAT rende questo elemento FLOTTANTE: il suo contenuto comincerà ad allinearsi a left o right, e il RESTO dell'HTML *automagicamente* si comincerà a posizionare sul LATO LIBERO! questa direttiva comincia ad affiancare gli elementi fino al raggiungimento di una successiva proprietà di "reset" chiamata *clear* */
+
+    /* poichè ora il padding-left della section successiva viene applicato erroneamente all'estremo sx della section, ripristino la spaziatura tra l'immagine e il testo con un margin-right sulla section dell'orso */
+    margin-right: 1em;
+  }
+
+  footer {
+    clear: left;
+    /* voglio che dal footer in poi l'HTML ricominci a comportarsi normalmente, senza allineamenti automatici; devo quindi su questo elemento assegnare una proprietà di clear con un valore pari a quello che avevo dato a float. */
+  }
+}
