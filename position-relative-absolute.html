@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>La proprietà POSITION</title>
+    <style>
+      body {
+        background-color: rgb(214, 214, 214);
+      }
+
+      .relative {
+        /* questo lo applico all'article, cioè la CARD */
+        position: relative;
+        /* rendo la card un elemento inline-block */
+        display: inline-block;
+      }
+
+      .rounded-border {
+        border: 1px solid black;
+        border-radius: 25px;
+      }
+
+      .new {
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: red;
+        color: white;
+        border: 1px solid red;
+        border-radius: 50%;
+        padding: 0.5em;
+        /* questo elemento in absolute ora cercherà tra i suoi antenati un elemento posizionato,
+        troverà l'article che è position: relative e lo prenderà come suo riferimento per top, bottom,
+        left e right */
+        position: absolute;
+        right: -25px;
+        top: -15px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h2>Position: absolute + relative</h2>
+    </header>
+    <main>
+      <p>
+        La proprietà "position" determina il posizionamento di un elemento
+        all'interno del documento. NB: la proprietà "position" NON deve venire
+        intesa come strumento di IMPAGINAZIONE; può venire però utile per fare
+        "micro-aggiustamenti", o per intenzionalmente andare a sovrapporre degli
+        elementi. NON È UNO STRUMENTO DA ABUSARE. Per creare delle vere e
+        proprie "impaginazioni" ("layouts") la proprietà principale è *display*.
+      </p>
+      <p>
+        La regola dice: un elemento dotato di position: absolute prenderà come
+        riferimento per il suo posizionamento il più vicino ancestor (antenato)
+        dotato di posizionamento (dotato di un valore di position che NON sia
+        static). In mancanza di tale antenato, prenderà come estremo riferimento
+        i bordi del documento.
+      </p>
+      <section id="cards">
+        <article class="relative">
+          <img
+            src="https://placedog.net/200/300"
+            alt="doggo"
+            class="rounded-border"
+          />
+          <span class="new">NEW</span>
+        </article>
+        <article class="relative">
+          <img
+            src="https://placedog.net/200/300"
+            alt="doggo"
+            class="rounded-border"
+          />
+          <span class="new">NEW</span>
+        </article>
+        <article class="relative">
+          <img
+            src="https://placedog.net/200/300"
+            alt="doggo"
+            class="rounded-border"
+          />
+          <span class="new">NEW</span>
+        </article>
+        <article class="relative">
+          <img
+            src="https://placedog.net/200/300"
+            alt="doggo"
+            class="rounded-border"
+          />
+          <span class="new">NEW</span>
+        </article>
+      </section>
+    </main>
+    <footer>
+      <p>EPICODE - 2026</p>
+    </footer>
+  </body>
+</html>
