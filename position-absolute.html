@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>La proprietà POSITION</title>
+    <style>
+      body {
+        background-color: rgb(214, 214, 214);
+        margin: 0;
+      }
+
+      .absolute {
+        position: absolute;
+        /* diamogli un po' di colore */
+        background-color: deeppink;
+        color: white;
+        /* tolgo i margini del p per pulizia */
+        margin: 0;
+        /* tra i genitori di questo elemento in absolute NON compare un altro elemento con position; 
+        questo significa che il paragrafo NON troverà un riferimento nella pagina, e di conseguenza
+        prenderà come riferimento i BORDI del documento. */
+        bottom: 0; /* sposto il paragrafo in FONDO al documento */
+        right: 0; /* sposto il paragrafo sul bordo DX del documento */
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h2>Position: absolute</h2>
+    </header>
+    <main>
+      <p>
+        La proprietà "position" determina il posizionamento di un elemento
+        all'interno del documento. NB: la proprietà "position" NON deve venire
+        intesa come strumento di IMPAGINAZIONE; può venire però utile per fare
+        "micro-aggiustamenti", o per intenzionalmente andare a sovrapporre degli
+        elementi. NON È UNO STRUMENTO DA ABUSARE. Per creare delle vere e
+        proprie "impaginazioni" ("layouts") la proprietà principale è *display*.
+      </p>
+      <p>
+        Il valore "absolute" della proprietà position permette di definire un
+        posizionamento "assoluto" per un elemento. Grazie alle proprietà "top",
+        "bottom", "left" e "right" avrete la possibilità di "ancorare" un
+        elemento ad un riferimento all'interno della pagina. Un elemento dotato
+        di "position: absolute" cercherà tra i suoi ancestors un altro elemento
+        dotato di position (non static) e lo prenderà come riferimento per la
+        sua posizione; in mancanza di tale elemento, l'elemento assoluto
+        prenderà come riferimento i BORDI del documento.
+      </p>
+      <article>
+        <p class="absolute">
+          Questo paragrafo è posizionato con "position: absolute".
+        </p>
+      </article>
+    </main>
+    <footer>
+      <p>EPICODE - 2026</p>
+    </footer>
+  </body>
+</html>

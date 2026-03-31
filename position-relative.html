@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>La proprietà POSITION</title>
+    <style>
+      body {
+        background-color: rgb(214, 214, 214);
+      }
+
+      .relative {
+        position: relative;
+        background-color: rgb(63, 63, 237);
+        color: white;
+        /* una volta che un elemento è dotato di position NON static, potete influenzarne
+        il posizionamento con le proprietà "top", "bottom", "left", "right".
+        Nel caso di position: relative, queste 4 proprietà decidono COME e QUANTO l'elemento
+        si scosterà dalla sua posizione naturale, quella che avrebbe assunto con position: static */
+        top: -60px;
+        left: -100px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h2>Position: relative</h2>
+    </header>
+    <main>
+      <p>
+        La proprietà "position" determina il posizionamento di un elemento
+        all'interno del documento. NB: la proprietà "position" NON deve venire
+        intesa come strumento di IMPAGINAZIONE; può venire però utile per fare
+        "micro-aggiustamenti", o per intenzionalmente andare a sovrapporre degli
+        elementi. NON È UNO STRUMENTO DA ABUSARE. Per creare delle vere e
+        proprie "impaginazioni" ("layouts") la proprietà principale è *display*.
+      </p>
+      <p>
+        Il valore "relative" della proprietà position permette di assegnare ad
+        un elemento una posizione "relativa": sarà possibile SPOSTARE questo
+        elemento rispetto alla posizione naturale che avrebbe assunto con
+        position: static (quella naturale che avrebbe assunto nel documento).
+      </p>
+      <article>
+        <p class="relative">
+          Questo paragrafo è posizionato con "position: relative".
+        </p>
+      </article>
+    </main>
+    <footer>
+      <p>EPICODE - 2026</p>
+    </footer>
+  </body>
+</html>

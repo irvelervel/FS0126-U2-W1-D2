@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>La proprietà POSITION</title>
+    <style>
+      body {
+        background-color: rgb(214, 214, 214);
+      }
+
+      .static {
+        position: static;
+        /* diamogli un po' di colore */
+        background-color: orange;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h2>Position: static</h2>
+    </header>
+    <main>
+      <p>
+        La proprietà "position" determina il posizionamento di un elemento
+        all'interno del documento. NB: la proprietà "position" NON deve venire
+        intesa come strumento di IMPAGINAZIONE; può venire però utile per fare
+        "micro-aggiustamenti", o per intenzionalmente andare a sovrapporre degli
+        elementi. NON È UNO STRUMENTO DA ABUSARE. Per creare delle vere e
+        proprie "impaginazioni" ("layouts") la proprietà principale è *display*.
+      </p>
+      <p>
+        Il valore "static" della proprietà position è il valore di DEFAULT. Se
+        un elemento non ha ricevuto una proprietà "position", assegnargliela con
+        un valore di "static" non porterà risultati. Quindi quando si utilizza?
+        Quando si vuole in qualche circostanza RESETTARE il suo comportamento
+        (magari con una media-query gli avevate assegnato un valore di position:
+        absolute, e con un altra media-query lo volete "resettare").
+      </p>
+      <article>
+        <p class="static">
+          Questo paragrafo è posizionato con "position: static".
+        </p>
+      </article>
+    </main>
+    <footer>
+      <p>EPICODE - 2026</p>
+    </footer>
+  </body>
+</html>
